@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       backgroundColor: {
         'stadium': "url('./assets/img/field-bg.svg')",
-        'card': "url('https://www.futbin.com/design2/img/static/evolutions/placeholder-card-normal.webp')"
+        'card': "url('https://www.futbin.com/design2/img/static/evolutions/placeholder-card-normal.webp')",
+        'primary': "#2b2a2a",
+        'rating': "#4d331f",
       }
     },
   },
