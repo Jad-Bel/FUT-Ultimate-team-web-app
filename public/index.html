@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-red-400">
     <!-- <img src="../assets/img/stadium_background.webp" alt="" class="z-0 absolute"> -->
-    <div class="relative">
+    <div class="">
         <div>
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 904 650" fill="none" width="892" height="725" class="object-contain absolute">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 904 650" fill="none" width="892" height="725" class="object-contain absolute">
                 <defs>
                     <svg id="futbin-logo" width="81" height="27" viewBox="0 0 300 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g fill="#ffffff7f">
@@ -49,38 +49,209 @@
                 </g>
                 <use href="#futbin-logo" y="613" x="18"/>
                 <use href="#futbin-logo" y="613" x="802"/>
-            </svg> -->
-            
-        </div>
-    </div>
+            </svg>
+            <div class="flex flex-col">
+                <div id="atq-cards" class="w-[55.65rem] flex justify-center">
+                    <div class="flex gap-28">
 
-    <div id="cardlid1" class="border-2">
-        <div class="slot relative">
-            <!-- <div class="position-circle-wrapper hide-when-dragging border-y-4">
-                <div class="position-circle-pulse"></div>
-            </div> -->
-            <!-- <div class="position-circle-wrapper hide-when-not-dragging">
-                <div class="position-circle-drag"></div>
-                <div class="position-circle">
-                    <div class="position-circle-drag-icon"></div>
-                </div>
-            </div> -->
-            <button class="" aria-label="Card Button">
-                <img class="" src="../assets/img/placeholder-card-normal.webp">
-                    <div class="flex">
-                        <span class="flex items-center justify-center text-2xl  h-20 relative bottom-36 left-16 text-white">
-                            <div class="absolute font-large flex items-center"><span class=" flex items-center justify-start">+</span></div>
-                            <svg class="" viewBox="0 0 36 42" fill="none" width="36">
-                                <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
-                            </svg>
-                        </span>
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+        
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+        
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-            </button>
-            <div class="border-2 w-10 flex items-center justify-center">
-                <div class="">LW</div>
+
+                    <div id="md-cards" class="w-[55.65rem] flex justify-center">
+                        <div class="flex gap-28">
+
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+        
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+        
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div id="def-cards" class="w-[55.65rem] flex justify-center">
+                        <div class="flex gap-28">
+
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+        
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+        
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="gk-cards" class="w-[55.65rem] flex justify-center">
+                        <div class="flex gap-28">
+
+                            <div id="cardlid1" class="w-28 h-40 relative">
+                                <button class="" aria-label="Card Button">
+                                    <img class="" src="../assets/img/placeholder-card-normal.webp">
+                                        <div class="flex">
+                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                                <div class="absolute font-large flex items-center text-green-400">
+                                                    <span class="h-9">+</span>
+                                                </div>
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="30">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
+                                                    </svg>
+                                            </span>
+                                        </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
