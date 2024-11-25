@@ -553,3 +553,135 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-28 {
+  top: 7rem;
+}
+
+.bottom-28 {
+  bottom: 7rem;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.bottom-32 {
+  bottom: 8rem;
+}
+
+.bottom-3 {
+  bottom: 0.75rem;
+}
+
+.bottom-36 {
+  bottom: 9rem;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
+.left-16 {
+  left: 4rem;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[90\%\] {
+  height: 90%;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-y-4 {
+  border-top-width: 4px;
+  border-bottom-width: 4px;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
