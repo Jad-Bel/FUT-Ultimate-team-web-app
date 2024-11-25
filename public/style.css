@@ -630,8 +630,72 @@ video {
   left: 0.25rem;
 }
 
+.bottom-\[7\.\] {
+  bottom: 7.;
+}
+
+.bottom-\[8rem\] {
+  bottom: 8rem;
+}
+
+.bottom-\[7\.rem\] {
+  bottom: 7.rem;
+}
+
+.bottom-\[7\.7rem\] {
+  bottom: 7.7rem;
+}
+
+.bottom-\[7\.8rem\] {
+  bottom: 7.8rem;
+}
+
+.bottom-\[7\.75rem\] {
+  bottom: 7.75rem;
+}
+
+.bottom-1 {
+  bottom: 0.25rem;
+}
+
+.bottom-\[8\.1rem\] {
+  bottom: 8.1rem;
+}
+
+.bottom-\[8\.05rem\] {
+  bottom: 8.05rem;
+}
+
+.bottom-\[8\.04rem\] {
+  bottom: 8.04rem;
+}
+
+.bottom-\[9rem\] {
+  bottom: 9rem;
+}
+
+.bottom-\[8\.5rem\] {
+  bottom: 8.5rem;
+}
+
 .z-0 {
   z-index: 0;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .flex {
@@ -658,6 +722,30 @@ video {
   height: 2.25rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
+.h-7 {
+  height: 1.75rem;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -674,12 +762,20 @@ video {
   width: 100%;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .flex-col {
   flex-direction: column;
 }
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -706,6 +802,22 @@ video {
   gap: 10rem;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-0\.5 {
+  gap: 0.125rem;
+}
+
+.gap-52 {
+  gap: 13rem;
+}
+
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
@@ -713,6 +825,10 @@ video {
 
 .gap-y-5 {
   row-gap: 1.25rem;
+}
+
+.self-baseline {
+  align-self: baseline;
 }
 
 .border {
@@ -765,6 +881,10 @@ video {
   padding: -5rem;
 }
 
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -805,12 +925,20 @@ video {
   font-size: 0.4rem;
 }
 
+.text-\[0\.2rem\] {
+  font-size: 0.2rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .text-green-400 {
