@@ -1,23 +1,4 @@
-// let data = JSON.parse(localStorage.getItem("players") || "[]");
 
-// const fetchData = async () => {
-//     if (data.length === 0 && !localStorage.getItem("players_loaded")) {
-//         try {
-//             const response = await axios.get('https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/players.json');
-//             if (response.data && response.data.players) {
-//                 data = response.data.players;
-//                 localStorage.setItem("players", JSON.stringify(data));
-//                 localStorage.setItem("players_loaded", "true");
-//                 console.log(data);
-//             }
-//         } catch (error) {
-//             console.error("Error fetching data:", error);
-//         }
-//     }
-// }
-
-
-// document.addEventListener('DOMContentLoaded', fetchData)
 
 
 const addPlayerBtn = document.getElementById('addBtn');
@@ -38,35 +19,28 @@ closeModalField.addEventListener('click', function() {
     modalField.classList.add('hidden');
 })
 
-// card.addEventListener('click', function () {
-//     document.getElementById('formation-container').classList.add('hidden')
-//     document.getElementById('subtitues-container').classList.add('hidden')
 
-//     searchModal.classList.remove('hidden')
-// console.log(2);
-// })
 
 let startIndex = 0;
 let playersPerPage = 10;
 
 fetch("../players.json")
-.then((response) => response.json())
+.then((response) => response.json() )
 .then ((allPlayers) => {
-    console.log(1)
-    const cardContainer = document.querySelector("#card-container");
-
-    cardContainer.addEventListener('click', function () {
+    let data = allPlayers.players
+    const cardContainer = document.querySelector("#search-cards");
+    card.addEventListener('click', function () {
         document.getElementById('formation-container').classList.add('hidden')
         document.getElementById('subtitues-container').classList.add('hidden')
 
-        searchModal.classList.remove('hidden')
-
+        searchModal.classList.remove('hidden');
         cardContainer.innerHTML = "";
 
-        const visiblePlayers = allPlayers
-console.log(2);
-        card.forEach(player => {
-            card.innerHTML += `
+        // const visiblePlayers = allPlayers.slice(startIndex, startIndex + playersPerPage);
+        data.forEach((player) => {
+            console.log(player);
+            cardContainer.innerHTML +=
+             `
             <div id="LW" class="cardlid w-36 h-40 shadow-white hover:drop-shadow-2xl transition-all duration-200 ease-in-out">
                             <button class="relative bottom-5 left-4" aria-label="Card Button">
                                 <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
