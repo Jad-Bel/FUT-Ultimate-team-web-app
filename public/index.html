@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 </head>
 <body class="bg-primary">
 
-    <header class="">
+    <header>
         <div class="px-6 bg-black flex justify-between items-center">
             <div class="w-16 h-16 p-2">
                 <img src="https://cdn.futbin.com/design/img/logos/futbin-green-small.png?v=5" class="rounded-md" alt="">
@@ -20,7 +20,7 @@
         </div>
     </header>
 
-<div class="modal hidden">
+<div class="search-modal ">
     <div class="search-input">
         <div class="title flex justify-between items-center p-3 sm:p-8">
             <div class="border-b w-28 text-white font-semibold">
@@ -39,9 +39,106 @@
             <input type="text" placeholder="Search for Player..." class="bg-white placeholder:text-primary focus:outline-none border-2 focus:border-emerald-500 p-2 rounded-lg w-64 transition-all duration-200 ease-out focus:w-72 ">
         </div>
 </div>
-    
 
-    <!-- <img src="../assets/img/stadium_background.webp" alt="" class="z-0 absolute"> -->
+<section class="hidden modalContainer">
+    <div id="addForm" class="w-full bg-black-slate rounded-lg p-4 text-white">
+        <div class="flex justify-between items-center">
+            <h2 class="text-center text-2xl font-bold mb-4 relative top-2">ADD A PLAYER</h2>
+            <span id="closeAdd" class="">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </span>
+        </div>
+        <form class="flex flex-col gap-4">
+            <!-- Info Column -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex flex-col">
+                    <label for="name" class="mb-1 text-sm font-semibold">Player Name</label>
+                    <input type="text" id="nameInput" placeholder="Enter player name" class="input border-black p-2 rounded-lg">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="nationality" class="mb-1 text-sm font-semibold">Nationality</label>
+                    <input type="text" id="natioInput" placeholder="Enter nationality" class="input border-black p-2 rounded-lg">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="club" class="mb-1 text-sm font-semibold">Club Name</label>
+                    <input type="text" id="clubInput" placeholder="Enter club name" class="input border-black p-2 rounded-lg">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="position" class="mb-1 text-sm font-semibold">Position</label>
+                    <input type="text" id="positionInput" placeholder="Enter position" class="input border-black p-2 rounded-lg">
+                </div>
+            </div>
+
+            <!-- Images Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex flex-col">
+                    <label for="player-photo" class="mb-1 text-sm font-semibold">Player Photo</label>
+                    <input type="file" id="photoInput" class="input  file:bg-emerald-500 file:rounded-md file:border-none file:py-1 file:px-2 file:transition-all file:duration-500 file:ease-in-out file:hover:bg-emerald-700 file:text-white">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="club-photo" class="mb-1 text-sm font-semibold">Club Logo</label>
+                    <input type="file" id="clubImageInput" class="input file:bg-emerald-500 file:rounded-md file:border-none file:py-1 file:px-2 file:transition-all file:duration-500 file:ease-in-out file:hover:bg-emerald-700 file:text-white">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="flag-photo" class="mb-1 text-sm font-semibold">National Flag</label>
+                    <input type="file" id="flagImageInput" class="input  file:bg-emerald-500 file:rounded-md file:border-none file:py-1 file:px-2 file:transition-all file:duration-500 file:ease-in-out file:hover:bg-emerald-700 file:text-white">
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="flex flex-col">
+                    <label for="pace" class="mb-1 text-sm font-semibold">Pace</label>
+                    <input type="number" id="paceInput" placeholder="Pace (0-100)" class="input border-black p-2 rounded-lg" min="0"
+                        max="100">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="shooting" class="mb-1 text-sm font-semibold">Shooting</label>
+                    <input type="number" id="shootingInput" placeholder="Shooting (0-100)" class="input border-black p-2 rounded-lg" min="0"
+                        max="100">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="passing" class="mb-1 text-sm font-semibold">Passing</label>
+                    <input type="number" id="passingInput" placeholder="Passing (0-100)" class="input border-black p-2 rounded-lg" min="0"
+                        max="100">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="Dribbling" class="mb-1 text-sm font-semibold">Dribbling</label>
+                    <input type="number" id="dribblingInput" placeholder="Dribbling (0-100)" class="input border-black p-2 rounded-lg"
+                        min="0" max="100">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="Defending" class="mb-1 text-sm font-semibold">Defending</label>
+                    <input type="number" id="defendingInput" placeholder="Defending (0-100)" class="input border-black p-2 rounded-lg"
+                        min="0" max="100">
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="Physical" class="mb-1 text-sm font-semibold">Physical</label>
+                    <input type="number" id="physicalInput" placeholder="Physical (0-100)" class="input border-black p-2 rounded-lg" min="0"
+                        max="100">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center mt-4">
+                <button id="addBtn" class="submitBtn bg-emerald-500 p-2 rounded-md hover:bg-emerald-800 transition-all duration-200 ease-in-out">
+                    Submit Player
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
 <div id="formation-container" class="">
     <div class="">
         <div>
@@ -87,23 +184,36 @@
                 <div id="atq-cards" class="w-[55.65rem] flex justify-center">
                     <div class="flex gap-40 ">
 
-                        <div id="subCard1" class="w-36 h-40 ">
+                        <div id="subCard1" class="w-36 h-40 shadow-white hover:drop-shadow-2xl transition-all duration-200 ease-in-out">
                             <button class="relative bottom-5 left-4" aria-label="Card Button">
                                 <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
                                     <div class="flex">
-                                        <div class="gap-2 flex flex-col items-center justify-center text-2xl relative bottom-[11rem] left-4 h-40 w-28 text-white">
+                                        <div class="text-[#4d331f] gap-1 flex flex-col items-center justify-center text-2xl relative bottom-[11rem] left-4 h-40 w-28">
                                             <div class="flex ">
                                                 <div class="text-sm relative left-1.5 flex flex-col">
                                                     <span class="text-[#4d331f] relative top-2 font-bold text-lg">93</span>
-                                                    <span class="text-[#4d331f] relative top- text-[0.5rem]">RM</span>
+                                                    <span class="text-[#4d331f] relative bottom-0.5 text-[0.5rem]">RM</span>
+                                                    <div class="flex flex-col items-center gap-0.5 relative bottom-1.5">
+                                                        <div class=" w-3">
+                                                            <img src="../assets/img/120.webp" alt="">
+                                                        </div>
+                                
+                                                        <div class=" w-3">
+                                                            <img src="../assets/img/ar.webp" alt="">
+                                                        </div>
+                                                    </div>
                                                 </div>
                             
-                                                <div class="w-18 relative right-2 top-1">
+                                                <div class="w-18 relative right-2 bottom-[0.1rem]">
                                                     <img src="../assets/img/25_120.webp" alt="">
                                                 </div>
                                             </div>
                         
-                                            <div class="flex gap-0.5">
+                                            <div class="h-3 flex">
+                                                <span class="text-xs font-bold relative bottom-1.5">MESSI</span>
+                                            </div>
+                        
+                                            <div class="flex gap-0.5 relative bottom-1.5">
                                                 <div class="">
                                                     
                                                     <div class="h-3 flex items-center ">
@@ -176,103 +286,93 @@
                         
                                                 </div>
                                             </div>
-                        
-                                            <div class="flex items-center gap-1 relative bottom-0.5">
-                                                <div class=" w-3">
-                                                    <img src="../assets/img/120.webp" alt="">
-                                                </div>
-                        
-                                                <div class=" w-3">
-                                                    <img src="../assets/img/ar.webp" alt="">
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                             </button>
                         </div>
                         
         
-                            <div id="cardlid2" class="w-28 h-40 relative bottom-7">
-                                <button class="" aria-label="Card Button">
+                            <div id="ST" class="carlid w-28 h-40 relative bottom-7">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
         
-                            <div id="cardlid3" class="w-28 h-40 relative">
-                                <button class="" aria-label="Card Button">
+                            <div id="RW" class="carlid w-28 h-40">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
-                        </div>
                     </div>
+                </div>
 
-                    <div id="md-cards" class="w-[55.65rem] flex justify-center">
+                <div id="md-cards" class="w-[55.65rem] flex justify-center">
                         <div class="flex gap-24">
 
-                            <div id="cardlid4" class="w-28 h-40 relative">
-                                <button class="" aria-label="Card Button">
+                            <div id="CLM" class="cardlid w-28 h-40 relative">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
         
-                            <div id="cardlid5" class="w-28 h-40 relative top-7">
-                                <button class="" aria-label="Card Button">
+                            <div id="CDM" class="cardlid w-28 h-40 relative top-7">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
         
-                            <div id="cardlid6" class="w-28 h-40 relative">
-                                <button class="" aria-label="Card Button">
+                            <div id="CLM" class="cardlid w-28 h-40 relative">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
@@ -283,87 +383,87 @@
                     <div id="def-cards" class="w-[55.65rem] flex justify-center relative top-14">
                         <div class="flex gap-28">
 
-                            <div id="cardlid7" class="w-28 h-40 relative bottom-7">
-                                <button class="" aria-label="Card Button">
+                            <div id="RB" class="cardlid w-28 h-40 relative bottom-7">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
         
-                            <div id="cardlid8" class="w-28 h-40 relative">
-                                <button class="" aria-label="Card Button">
+                            <div id="CDR" class="cardlid w-28 h-40 relative">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
         
-                            <div id="cardlid9" class="w-28 h-40 relative">
-                                <button class="" aria-label="Card Button">
+                            <div id="CDL" class="cardlid w-28 h-40 relative">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
 
-                            <div id="cardlid10" class="w-28 h-40 relative bottom-7">
-                                <button class="" aria-label="Card Button">
+                            <div id="LB" class="cardlid w-28 h-40 relative bottom-7">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <div id="gk-cards" class="w-[55.65rem] flex justify-center relative top-10">
+                    <div id="gk-card" class="w-[55.65rem] flex justify-center relative top-10">
                         <div class="flex gap-28">
 
-                            <div id="cardlid11" class="w-28 h-40 relative top-3">
-                                <button class="" aria-label="Card Button">
+                            <div id="GK" class="cardlid w-28 h-40 relative top-3">
+                                <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                        <div class="flex">
-                                            <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                                <div class="absolute font-large flex items-center text-green-400">
+                                        <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                            <div class="flex items-center justify-center">
+                                                <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                                     <span class="h-9">+</span>
                                                 </div>
                                                     <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                         <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                                     </svg>
-                                            </span>
+                                                </div>
                                         </div>
                                 </button>
                             </div>
@@ -373,199 +473,199 @@
         </div>
     </div>
 
-    <div id="subtitues-container" class="hidden">
+    <div id="subtitues-container" class="">
         <div>
             <div id="def-cards" class="w-[55.65rem] flex justify-center relative top-14">
                 <div class="flex flex-wrap justify-center gap-y-5 gap-x-3 p-6">
 
                     <div id="subCard1" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard2" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard3" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard4" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard5" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard6" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard7" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard8" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard9" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard10" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard11" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
 
                     <div id="subCard12" class="w-28 h-40 relative">
-                        <button class="" aria-label="Card Button">
+                        <button class="h-40">
                             <img class="" src="../assets/img/placeholder-card-normal.webp">
-                                <div class="flex">
-                                    <span class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
-                                        <div class="absolute font-large flex items-center text-green-400">
+                                <div class="flex items-center justify-center text-2xl  h-20 relative bottom-[7.5rem] w-full text-white">
+                                    <div class="flex items-center justify-center">
+                                        <div class="absolute top-[21px] right-[48px] font-large text-green-400">
                                             <span class="h-9">+</span>
                                         </div>
                                             <svg class="" viewBox="0 0 36 42" fill="none" width="30">
                                                 <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="limegreen" stroke-width="1.5"></path>
                                             </svg>
-                                    </span>
+                                        </div>
                                 </div>
                         </button>
                     </div>
@@ -574,116 +674,6 @@
         </div>
     </div>
 </div>
-
-
-
-<div id="subCard1" class="w-36 h-40 shadow-white hover:drop-shadow-2xl transition-all duration-200 ease-in-out">
-    <button class="relative bottom-5 left-4" aria-label="Card Button">
-        <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
-            <div class="flex">
-                <div class="text-[#4d331f] gap-1 flex flex-col items-center justify-center text-2xl relative bottom-[11rem] left-4 h-40 w-28">
-                    <div class="flex ">
-                        <div class="text-sm relative left-1.5 flex flex-col">
-                            <span class="text-[#4d331f] relative top-2 font-bold text-lg">93</span>
-                            <span class="text-[#4d331f] relative bottom-0.5 text-[0.5rem]">RM</span>
-                            <div class="flex flex-col items-center gap-0.5 relative bottom-1.5">
-                                <div class=" w-3">
-                                    <img src="../assets/img/120.webp" alt="">
-                                </div>
-        
-                                <div class=" w-3">
-                                    <img src="../assets/img/ar.webp" alt="">
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="w-18 relative right-2 bottom-[0.1rem]">
-                            <img src="../assets/img/25_120.webp" alt="">
-                        </div>
-                    </div>
-
-                    <div class="h-3 flex">
-                        <span class="text-xs font-bold relative bottom-1.5">MESSI</span>
-                    </div>
-
-                    <div class="flex gap-0.5 relative bottom-1.5">
-                        <div class="">
-                            
-                            <div class="h-3 flex items-center ">
-                                <span class="text-[0.6rem] font-thin">PAC</span>
-                            </div>
-
-                            <div class="h-2.5 flex items-center justify-center">
-                                <span class="text-[0.6rem] font-semibold">85</span>
-                            </div>
-
-                        </div>
-
-                        <div class="">
-                            
-                            <div class="h-3 flex items-center">
-                                <span class="text-[0.6rem] font-thin">SHO</span>
-                            </div>
-
-                            <div class="h-2.5 flex items-center justify-center">
-                                <span class="text-[0.6rem] font-semibold">92</span>
-                            </div>
-
-                        </div>
-
-                        <div class="">
-                            
-                            <div class="h-3 flex items-center">
-                                <span class="text-[0.6rem] font-thin">PAS</span>
-                            </div>
-
-                            <div class="h-2.5 flex items-center justify-center">
-                                <span class="text-[0.6rem] font-semibold">91</span>
-                            </div>
-
-                        </div>
-
-                        <div class="">
-                            
-                            <div class="h-3 flex items-center">
-                                <span class="text-[0.6rem] font-thin">DRI</span>
-                            </div>
-
-                            <div class="h-2.5 flex items-center justify-center">
-                                <span class="text-[0.6rem] font-semibold">95</span>
-                            </div>
-
-                        </div>
-
-                        <div class="">
-                            
-                            <div class="h-3 flex items-center">
-                                <span class="text-[0.6rem] font-thin">DEF</span>
-                            </div>
-
-                            <div class="h-2.5 flex items-center justify-center">
-                                <span class="text-[0.6rem] font-semibold">35</span>
-                            </div>
-
-                        </div>
-
-                        <div class="">
-                            
-                            <div class="h-3 flex items-center">
-                                <span class="text-[0.6rem] font-thin">PHY</span>
-                            </div>
-
-                            <div class="h-2.5 flex items-center justify-center">
-                                <span class="text-[0.6rem] font-semibold">65</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </button>
-</div>
-
 
 <script src="main.js"></script>    
 </body>
