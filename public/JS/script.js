@@ -121,11 +121,11 @@
 //     // Filter players mn l-array li 3ndek b7asb l-position
 //     let feltredArry = players.filter(player => player.position == position);
 //     console.log(feltredArry );
-    
+
 //     cardsContainer.innerHTML = '';
 
 //     if (position) {
-        
+
 //         // L-loop b7al li kant b7ala ghi nghtsemo player cards
 //         feltredArry.forEach(player => {
 //             const shortStatLeft = position === "GK" ? `
@@ -307,7 +307,7 @@
 //             </div>
 //         </div>
 //     </div>
-  
+
 //                         `;
 //         }
 //     }
@@ -422,7 +422,7 @@ closeAddBtn.addEventListener('click', function () {
     formModal.classList.add('hidden');
 })
 
-position.addEventListener('change', function() {
+position.addEventListener('change', function () {
     const positionSelect = position.value;
 
     const paceLabel = document.querySelector('label[for="pace"]');
@@ -449,7 +449,7 @@ position.addEventListener('change', function() {
     }
 });
 
-function addPlayer () {
+function addPlayer() {
     const player = {
         id: nextId++,
         name: Name.value,
@@ -459,8 +459,8 @@ function addPlayer () {
         photo: "../assets/img/anoPlayer.png",
         logo: "../assets/img/football-club.png",
         flag: "../assets/img/unknown_flags_flag_9091.png"
-    }  
-    
+    }
+
     if (position.value === "GK") {
         player.diving = pace.value;
         player.handling = shooting.value;
@@ -489,7 +489,7 @@ submitPlayerBtn.addEventListener('click', function () {
     formModal.classList.add('hidden');
 })
 
-function clearFormField () {
+function clearFormField() {
     const player = {
         name: Name.value,
         position: position.value,
@@ -505,19 +505,22 @@ function clearFormField () {
 }
 
 let currTarget = null;
+let insertedPlayers = [];
 
-function displayFiltredPlayers (position, event) {
+
+function displayFiltredPlayers(position, event) {
     const filteredPLayers = players.filter(player => player.position === position);
     playersList.innerHTML = '';
     currTarget = event.currentTarget;
+    
 
     filteredPLayers.forEach(player => {
-        
-        const newDiv = document.createElement('div');
-        newDiv.classList = 'cardlid w-36 h-40 shadow-emerald-500 hover:drop-shadow-2xl transition-all duration-200 ease-in-out'
-        
-        if (position === "GK"){
-            newDiv.innerHTML = `<button class="relative bottom-5 left-4" onclick="insertPlayer(${player.id})">
+        if (!insertedPlayers.includes(player.id)) {
+            const newDiv = document.createElement('div');
+            newDiv.classList = 'cardlid w-36 h-40 shadow-emerald-500 hover:drop-shadow-2xl transition-all duration-200 ease-in-out'
+
+            if (position === "GK") {
+                newDiv.innerHTML = `<button class="relative bottom-5 left-4" onclick="insertPlayer(${player.id})">
                         <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
                         <div class="flex">
                             <div
@@ -624,8 +627,8 @@ function displayFiltredPlayers (position, event) {
                             </div>
                         </div>
                     </button>`
-        } else {
-            newDiv.innerHTML = `<button class="relative bottom-5 left-4" onclick="insertPlayer(${player.id})">
+            } else {
+                newDiv.innerHTML = `<button class="relative bottom-5 left-4" onclick="insertPlayer(${player.id})">
                 <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
                 <div class="flex">
                     <div
@@ -732,261 +735,33 @@ function displayFiltredPlayers (position, event) {
                     </div>
                 </div>
             </button>`
+            }
+
+            playersList.appendChild(newDiv);
         }
 
-        playersList.appendChild(newDiv);
     })
 
+    insertedPlayers.length = 0;
     formation.classList.add('hidden');
     subtitues.classList.add('hidden');
     searchPlayers.classList.remove('hidden');
 }
 
-function displayAllPlayers(event) {
-    playersList.innerHTML = '';
-    currTarget = event.currentTarget;
 
-    players.forEach(player => {
-        const newDiv = document.createElement('div');
-        newDiv.classList = 'cardlid w-36 h-40 shadow-emerald-500 hover:drop-shadow-2xl transition-all duration-200 ease-in-out'
 
-        if (currTarget.position === "GK"){
-            newDiv.innerHTML = `<button class="relative bottom-5" onclick="insertPlayer(${player.id})">
-                        <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
-                        <div class="flex">
-                            <div
-                                class="text-[#4d331f] gap-1 flex flex-col items-center justify-center text-2xl relative bottom-[11rem] left-4 h-40 w-28">
-                                <div class="flex ">
-                                    <div class="text-sm relative left-1.5 flex flex-col">
-                                        <span
-                                            class="text-[#4d331f] relative top-2 font-bold text-lg">${player.rating}</span>
-                                        <span
-                                            class="text-[#4d331f] relative bottom-0.5 text-[0.5rem]">${player.position}</span>
-                                        <div class="flex flex-col items-center gap-0.5 relative bottom-1.5">
-                                            <div class=" w-3">
-                                                <img src="${player.club}" alt="">
-                                            </div>
-            
-                                            <div class=" w-3">
-                                                <img src="${player.flag}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="w-18 relative right-2 bottom-[0.1rem]">
-                                        <img src="${player.photo}" alt="">
-                                    </div>
-                                </div>
-            
-                                <div class="h-3 flex">
-                                    <span class="text-xs font-bold relative bottom-1.5">${player.name}</span>
-                                </div>
-            
-                                <div class="flex gap-0.5 relative bottom-1.5">
-                                    <div class="">
-            
-                                        <div class="h-3 flex items-center ">
-                                            <span class="text-[0.6rem] font-thin">DIV</span>
-                                        </div>
-            
-                                        <div class="h-2.5 flex items-center justify-center">
-                                            <span class="text-[0.6rem] font-semibold">${player.diving}</span>
-                                        </div>
-            
-                                    </div>
-            
-                                    <div class="">
-            
-                                        <div class="h-3 flex items-center">
-                                            <span class="text-[0.6rem] font-thin">HAN</span>
-                                        </div>
-            
-                                        <div class="h-2.5 flex items-center justify-center">
-                                            <span class="text-[0.6rem] font-semibold">${player.handling}</span>
-                                        </div>
-            
-                                    </div>
-            
-                                    <div class="">
-            
-                                        <div class="h-3 flex items-center">
-                                            <span class="text-[0.6rem] font-thin">KIC</span>
-                                        </div>
-            
-                                        <div class="h-2.5 flex items-center justify-center">
-                                            <span class="text-[0.6rem] font-semibold">${player.kicking}</span>
-                                        </div>
-            
-                                    </div>
-            
-                                    <div class="">
-            
-                                        <div class="h-3 flex items-center">
-                                            <span class="text-[0.6rem] font-thin">REF</span>
-                                        </div>
-            
-                                        <div class="h-2.5 flex items-center justify-center">
-                                            <span class="text-[0.6rem] font-semibold">${player.reflexes}</span>
-                                        </div>
-            
-                                    </div>
-            
-                                    <div class="">
-            
-                                        <div class="h-3 flex items-center">
-                                            <span class="text-[0.6rem] font-thin">SPD</span>
-                                        </div>
-            
-                                        <div class="h-2.5 flex items-center justify-center">
-                                            <span class="text-[0.6rem] font-semibold">${player.speed}</span>
-                                        </div>
-            
-                                    </div>
-            
-                                    <div class="">
-            
-                                        <div class="h-3 flex items-center">
-                                            <span class="text-[0.6rem] font-thin">POS</span>
-                                        </div>
-            
-                                        <div class="h-2.5 flex items-center justify-center">
-                                            <span class="text-[0.6rem] font-semibold">${player.positioning}</span>
-                                        </div>
-            
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </button>`
-        } else {
-            newDiv.innerHTML = `<button class="relative bottom-5" onclick="insertPlayer(${player.id})">
-                <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
-                <div class="flex">
-                    <div
-                        class="text-[#4d331f] gap-1 flex flex-col items-center justify-center text-2xl relative bottom-[11rem] left-4 h-40 w-28">
-                        <div class="flex ">
-                            <div class="text-sm relative left-1.5 flex flex-col">
-                                <span
-                                    class="text-[#4d331f] relative top-2 font-bold text-lg">${player.rating}</span>
-                                <span
-                                    class="text-[#4d331f] relative bottom-0.5 text-[0.5rem]">${player.position}</span>
-                                <div class="flex flex-col items-center gap-0.5 relative bottom-1.5">
-                                    <div class=" w-3">
-                                        <img src="${player.club}" alt="">
-                                    </div>
-
-                                    <div class=" w-3">
-                                        <img src="${player.flag}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="w-18 relative right-2 bottom-[0.1rem]">
-                                <img src="${player.photo}" alt="">
-                            </div>
-                        </div>
-
-                        <div class="h-3 flex">
-                            <span class="text-xs font-bold relative bottom-1.5">${player.name}</span>
-                        </div>
-
-                        <div class="flex gap-0.5 relative bottom-1.5">
-                            <div class="">
-
-                                <div class="h-3 flex items-center ">
-                                    <span class="text-[0.6rem] font-thin">PAC</span>
-                                </div>
-
-                                <div class="h-2.5 flex items-center justify-center">
-                                    <span class="text-[0.6rem] font-semibold">${player.pace}</span>
-                                </div>
-
-                            </div>
-
-                            <div class="">
-
-                                <div class="h-3 flex items-center">
-                                    <span class="text-[0.6rem] font-thin">SHO</span>
-                                </div>
-
-                                <div class="h-2.5 flex items-center justify-center">
-                                    <span class="text-[0.6rem] font-semibold">${player.shooting}</span>
-                                </div>
-
-                            </div>
-
-                            <div class="">
-
-                                <div class="h-3 flex items-center">
-                                    <span class="text-[0.6rem] font-thin">PAS</span>
-                                </div>
-
-                                <div class="h-2.5 flex items-center justify-center">
-                                    <span class="text-[0.6rem] font-semibold">${player.passing}</span>
-                                </div>
-
-                            </div>
-
-                            <div class="">
-
-                                <div class="h-3 flex items-center">
-                                    <span class="text-[0.6rem] font-thin">DRI</span>
-                                </div>
-
-                                <div class="h-2.5 flex items-center justify-center">
-                                    <span class="text-[0.6rem] font-semibold">${player.dribbling}</span>
-                                </div>
-
-                            </div>
-
-                            <div class="">
-
-                                <div class="h-3 flex items-center">
-                                    <span class="text-[0.6rem] font-thin">DEF</span>
-                                </div>
-
-                                <div class="h-2.5 flex items-center justify-center">
-                                    <span class="text-[0.6rem] font-semibold">${player.defending}</span>
-                                </div>
-
-                            </div>
-
-                            <div class="">
-
-                                <div class="h-3 flex items-center">
-                                    <span class="text-[0.6rem] font-thin">PHY</span>
-                                </div>
-
-                                <div class="h-2.5 flex items-center justify-center">
-                                    <span class="text-[0.6rem] font-semibold">${player.physical}</span>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </button>`
-        }
-
-        playersList.appendChild(newDiv);
-    })
-    formation.classList.add('hidden');
-    subtitues.classList.add('hidden');
-    searchPlayers.classList.remove('hidden');
-}
-
-function insertPlayer (id) {
+function insertPlayer(id) {
 
     const playerToInsert = players.find(player => player.id === id);
-   
-    if(!playerToInsert) {
+
+    if (!playerToInsert) {
         console.log('player not found');
         return;
     }
 
-    console.log(currTarget);
-    
-    if (playerToInsert.position === "GK"){
+    insertedPlayers.push(playerToInsert.id);
+
+    if (playerToInsert.position === "GK") {
         currTarget.innerHTML = `
     <div class="cardlid w-36 h-40 shadow-emerald-500 hover:drop-shadow-2xl transition-all duration-200 ease-in-out">
         <button class="relative bottom-5 right-4" onclick="insertPlayer(${playerToInsert.id})">
@@ -1209,8 +984,244 @@ function insertPlayer (id) {
     </div>`
     }
 
+    currTarget.classList.add('inTeam');
+    currTarget = null;
 
     formation.classList.remove('hidden');
     subtitues.classList.remove('hidden');
     searchPlayers.classList.add('hidden');
+}
+
+function displayAllPlayers(event) {
+    playersList.innerHTML = '';
+    currTarget = event.currentTarget;
+
+
+    players.forEach(player => {
+        const newDiv = document.createElement('div');
+        newDiv.classList = 'cardlid w-36 h-40 shadow-emerald-500 hover:drop-shadow-2xl transition-all duration-200 ease-in-out'
+
+        if (currTarget.position === "GK") {
+            newDiv.innerHTML = `<button class="relative bottom-5" onclick="insertPlayer(${player.id})">
+                        <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
+                        <div class="flex">
+                            <div
+                                class="text-[#4d331f] gap-1 flex flex-col items-center justify-center text-2xl relative bottom-[11rem] left-4 h-40 w-28">
+                                <div class="flex ">
+                                    <div class="text-sm relative left-1.5 flex flex-col">
+                                        <span
+                                            class="text-[#4d331f] relative top-2 font-bold text-lg">${player.rating}</span>
+                                        <span
+                                            class="text-[#4d331f] relative bottom-0.5 text-[0.5rem]">${player.position}</span>
+                                        <div class="flex flex-col items-center gap-0.5 relative bottom-1.5">
+                                            <div class=" w-3">
+                                                <img src="${player.club}" alt="">
+                                            </div>
+            
+                                            <div class=" w-3">
+                                                <img src="${player.flag}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="w-18 relative right-2 bottom-[0.1rem]">
+                                        <img src="${player.photo}" alt="">
+                                    </div>
+                                </div>
+            
+                                <div class="h-3 flex">
+                                    <span class="text-xs font-bold relative bottom-1.5">${player.name}</span>
+                                </div>
+            
+                                <div class="flex gap-0.5 relative bottom-1.5">
+                                    <div class="">
+            
+                                        <div class="h-3 flex items-center ">
+                                            <span class="text-[0.6rem] font-thin">DIV</span>
+                                        </div>
+            
+                                        <div class="h-2.5 flex items-center justify-center">
+                                            <span class="text-[0.6rem] font-semibold">${player.diving}</span>
+                                        </div>
+            
+                                    </div>
+            
+                                    <div class="">
+            
+                                        <div class="h-3 flex items-center">
+                                            <span class="text-[0.6rem] font-thin">HAN</span>
+                                        </div>
+            
+                                        <div class="h-2.5 flex items-center justify-center">
+                                            <span class="text-[0.6rem] font-semibold">${player.handling}</span>
+                                        </div>
+            
+                                    </div>
+            
+                                    <div class="">
+            
+                                        <div class="h-3 flex items-center">
+                                            <span class="text-[0.6rem] font-thin">KIC</span>
+                                        </div>
+            
+                                        <div class="h-2.5 flex items-center justify-center">
+                                            <span class="text-[0.6rem] font-semibold">${player.kicking}</span>
+                                        </div>
+            
+                                    </div>
+            
+                                    <div class="">
+            
+                                        <div class="h-3 flex items-center">
+                                            <span class="text-[0.6rem] font-thin">REF</span>
+                                        </div>
+            
+                                        <div class="h-2.5 flex items-center justify-center">
+                                            <span class="text-[0.6rem] font-semibold">${player.reflexes}</span>
+                                        </div>
+            
+                                    </div>
+            
+                                    <div class="">
+            
+                                        <div class="h-3 flex items-center">
+                                            <span class="text-[0.6rem] font-thin">SPD</span>
+                                        </div>
+            
+                                        <div class="h-2.5 flex items-center justify-center">
+                                            <span class="text-[0.6rem] font-semibold">${player.speed}</span>
+                                        </div>
+            
+                                    </div>
+            
+                                    <div class="">
+            
+                                        <div class="h-3 flex items-center">
+                                            <span class="text-[0.6rem] font-thin">POS</span>
+                                        </div>
+            
+                                        <div class="h-2.5 flex items-center justify-center">
+                                            <span class="text-[0.6rem] font-semibold">${player.positioning}</span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </button>`
+        } else {
+            newDiv.innerHTML = `<button class="relative bottom-5" onclick="insertPlayer(${player.id})">
+                <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
+                <div class="flex">
+                    <div
+                        class="text-[#4d331f] gap-1 flex flex-col items-center justify-center text-2xl relative bottom-[11rem] left-4 h-40 w-28">
+                        <div class="flex ">
+                            <div class="text-sm relative left-1.5 flex flex-col">
+                                <span
+                                    class="text-[#4d331f] relative top-2 font-bold text-lg">${player.rating}</span>
+                                <span
+                                    class="text-[#4d331f] relative bottom-0.5 text-[0.5rem]">${player.position}</span>
+                                <div class="flex flex-col items-center gap-0.5 relative bottom-1.5">
+                                    <div class=" w-3">
+                                        <img src="${player.club}" alt="">
+                                    </div>
+
+                                    <div class=" w-3">
+                                        <img src="${player.flag}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-18 relative right-2 bottom-[0.1rem]">
+                                <img src="${player.photo}" alt="">
+                            </div>
+                        </div>
+
+                        <div class="h-3 flex">
+                            <span class="text-xs font-bold relative bottom-1.5">${player.name}</span>
+                        </div>
+
+                        <div class="flex gap-0.5 relative bottom-1.5">
+                            <div class="">
+
+                                <div class="h-3 flex items-center ">
+                                    <span class="text-[0.6rem] font-thin">PAC</span>
+                                </div>
+
+                                <div class="h-2.5 flex items-center justify-center">
+                                    <span class="text-[0.6rem] font-semibold">${player.pace}</span>
+                                </div>
+
+                            </div>
+
+                            <div class="">
+
+                                <div class="h-3 flex items-center">
+                                    <span class="text-[0.6rem] font-thin">SHO</span>
+                                </div>
+
+                                <div class="h-2.5 flex items-center justify-center">
+                                    <span class="text-[0.6rem] font-semibold">${player.shooting}</span>
+                                </div>
+
+                            </div>
+
+                            <div class="">
+
+                                <div class="h-3 flex items-center">
+                                    <span class="text-[0.6rem] font-thin">PAS</span>
+                                </div>
+
+                                <div class="h-2.5 flex items-center justify-center">
+                                    <span class="text-[0.6rem] font-semibold">${player.passing}</span>
+                                </div>
+
+                            </div>
+
+                            <div class="">
+
+                                <div class="h-3 flex items-center">
+                                    <span class="text-[0.6rem] font-thin">DRI</span>
+                                </div>
+
+                                <div class="h-2.5 flex items-center justify-center">
+                                    <span class="text-[0.6rem] font-semibold">${player.dribbling}</span>
+                                </div>
+
+                            </div>
+
+                            <div class="">
+
+                                <div class="h-3 flex items-center">
+                                    <span class="text-[0.6rem] font-thin">DEF</span>
+                                </div>
+
+                                <div class="h-2.5 flex items-center justify-center">
+                                    <span class="text-[0.6rem] font-semibold">${player.defending}</span>
+                                </div>
+
+                            </div>
+
+                            <div class="">
+
+                                <div class="h-3 flex items-center">
+                                    <span class="text-[0.6rem] font-thin">PHY</span>
+                                </div>
+
+                                <div class="h-2.5 flex items-center justify-center">
+                                    <span class="text-[0.6rem] font-semibold">${player.physical}</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>`
+        }
+
+        playersList.appendChild(newDiv);
+    })
+    formation.classList.add('hidden');
+    subtitues.classList.add('hidden');
+    searchPlayers.classList.remove('hidden');
 }
