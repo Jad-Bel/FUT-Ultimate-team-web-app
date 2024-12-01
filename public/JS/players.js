@@ -1,5 +1,6 @@
 let players = [
     {
+        "id": 1,
         "name": "Lionel Messi",
         "photo": "https://cdn.sofifa.net/players/158/023/25_120.png",
         "position": "RW",
@@ -16,6 +17,7 @@ let players = [
         "physical": 65
       },
       {
+          "id": 2,
         "name": "Cristiano Ronaldo",
         "photo": "https://cdn.sofifa.net/players/020/801/25_120.png",
         "position": "ST",
@@ -32,6 +34,7 @@ let players = [
         "physical": 77
       },
       {
+          "id": 3,
         "name": "Kevin De Bruyne",
         "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
         "position": "CM",
@@ -48,6 +51,7 @@ let players = [
         "physical": 78
       },
       {
+          "id": 4,
         "name": "Kylian Mbappé",
         "photo": "https://cdn.sofifa.net/players/231/747/25_120.png",
         "position": "ST",
@@ -64,6 +68,7 @@ let players = [
         "physical": 77
       },
       {
+          "id": 5,
         "name": "Virgil van Dijk",
         "photo": "https://cdn.sofifa.net/players/203/376/25_120.png",
         "position": "CB",
@@ -80,6 +85,7 @@ let players = [
         "physical": 86
       },
       {
+          "id": 6,
         "name": "Antonio Rudiger",
         "photo": "https://cdn.sofifa.net/players/205/452/25_120.png",
         "position": "CB",
@@ -96,6 +102,7 @@ let players = [
         "physical": 86
       },
       {
+          "id": 7,
         "name": "Neymar Jr",
         "photo": "https://cdn.sofifa.net/players/190/871/25_120.png",
         "position": "LW",
@@ -112,6 +119,7 @@ let players = [
         "physical": 61
       },
       {
+          "id": 8,
         "name": "Mohamed Salah",
         "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
         "position": "RW",
@@ -128,6 +136,7 @@ let players = [
         "physical": 75
       },
       {
+          "id": 9,
         "name": "Joshua Kimmich",
         "photo": "https://cdn.sofifa.net/players/212/622/25_120.png",
         "position": "CM",
@@ -144,6 +153,7 @@ let players = [
         "physical": 81
       },
       {
+          "id": 10,
         "name": "Jan Oblak",
         "photo": "https://cdn.sofifa.net/players/200/389/25_120.png",
         "position": "GK",
@@ -160,6 +170,7 @@ let players = [
         "positioning": 88
       },
       {
+          "id": 11,
         "name": "Luka Modrić",
         "photo": "https://cdn.sofifa.net/players/177/003/25_120.png",
         "position": "CM",
@@ -176,6 +187,7 @@ let players = [
         "physical": 65
       },
       {
+          "id": 12,
         "name": "Vinicius Junior",
         "photo": "https://cdn.sofifa.net/players/238/794/25_120.png",
         "position": "LW",
@@ -192,6 +204,7 @@ let players = [
         "physical": 61
       },
       {
+          "id": 13,
         "name": "Brahim Diáz",
         "photo": "https://cdn.sofifa.net/players/231/410/25_120.png",
         "position": "LW",
@@ -208,6 +221,7 @@ let players = [
         "physical": 56
       },
       {
+          "id": 14,
         "name": "Karim Benzema",
         "photo": "https://cdn.sofifa.net/players/165/153/25_120.png",
         "position": "ST",
@@ -224,6 +238,7 @@ let players = [
         "physical": 78
       },
       {
+          "id": 15,
         "name": "Erling Haaland",
         "photo": "https://cdn.sofifa.net/players/239/085/25_120.png",
         "position": "ST",
@@ -240,6 +255,7 @@ let players = [
         "physical": 88
       },
       {
+          "id": 16,
         "name": "N'Golo Kanté",
         "photo": "https://cdn.sofifa.net/players/215/914/25_120.png",
         "position": "CDM",
@@ -256,6 +272,7 @@ let players = [
         "physical": 82
       },
       {
+          "id": 17,
         "name": "Alphonso Davies",
         "photo": "https://cdn.sofifa.net/players/234/396/25_120.png",
         "position": "LB",
@@ -272,6 +289,7 @@ let players = [
         "physical": 77
       },
       {
+          "id": 18,
         "name": "Yassine Bounou",
         "photo": "https://cdn.sofifa.net/players/209/981/25_120.png",
         "position": "GK",
@@ -288,6 +306,7 @@ let players = [
         "positioning": 83
       },
       {
+          "id": 19,
         "name": "Bruno Fernandes",
         "photo": "https://cdn.sofifa.net/players/212/198/25_120.png",
         "position": "CM",
@@ -304,6 +323,7 @@ let players = [
         "physical": 77
       },
       {
+          "id": 20,
         "name": "Jadon Sancho",
         "photo": "https://cdn.sofifa.net/players/233/049/25_120.png",
         "position": "LW",
@@ -320,6 +340,7 @@ let players = [
         "physical": 63
       },
       {
+          "id": 21,
         "name": "Alexander-Arnold",
         "photo": "https://cdn.sofifa.net/players/231/281/25_120.png",
         "position": "RB",
@@ -335,6 +356,7 @@ let players = [
         "physical": 71
       },
       {
+          "id": 22,
         "name": "Achraf Hakimi",
         "photo": "https://cdn.sofifa.net/players/235/212/25_120.png",
         "position": "RB",
@@ -351,6 +373,7 @@ let players = [
         "physical": 78
       },
       {
+          "id": 23,
         "name": "Youssef En-Nesyri",
         "photo": "https://cdn.sofifa.net/players/235/410/25_120.png",
         "position": "ST",
@@ -367,6 +390,7 @@ let players = [
         "physical": 80
       },
       {
+          "id": 24,
         "name": "Noussair Mazraoui",
         "photo": "https://cdn.sofifa.net/players/236/401/25_120.png",
         "position": "LB",
@@ -383,6 +407,7 @@ let players = [
         "physical": 71
       },
       {
+          "id": 25,
         "name": "Ismael Saibari",
         "photo": "https://cdn.sofifa.net/players/259/480/25_120.png",
         "position": "CM",
@@ -399,6 +424,7 @@ let players = [
         "physical": 84
       },
       {
+          "id": 26,
         "name": "Donnarumma",
         "photo": "https://cdn.sofifa.net/players/230/621/25_120.png",
         "position": "GK",

@@ -215,7 +215,7 @@
                     
                     <div id="atq-cards" class="w-[55.65rem] flex justify-center">
                         <div class="flex gap-40 ">
-                            <div id="LW" onclick="displayFiltredPlayers('LW')" class="cardlid w-28 h-40 relative">
+                            <div id="LW" onclick="displayFiltredPlayers('LW', event)" class="cardlid w-28 h-40 relative">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -234,7 +234,7 @@
                                 </button>
                             </div>
 
-                            <div id="ST" onclick="displayFiltredPlayers('ST')" class="cardlid w-28 h-40 relative bottom-7">
+                            <div id="ST" onclick="displayFiltredPlayers('ST', event)" class="cardlid w-28 h-40 relative bottom-7">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -253,7 +253,7 @@
                                 </button>
                             </div>
 
-                            <div id="RW" onclick="displayFiltredPlayers('RW')" class="cardlid w-28 h-40">
+                            <div id="RW" onclick="displayFiltredPlayers('RW', event)" class="cardlid w-28 h-40">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -277,7 +277,7 @@
                     <div id="md-cards" class="w-[55.65rem] flex justify-center">
                         <div class="flex gap-24">
 
-                            <div id="CM" onclick="displayFiltredPlayers('CM')" class="cardlid w-28 h-40 relative">
+                            <div id="CM" onclick="displayFiltredPlayers('CM', event)" class="cardlid w-28 h-40 relative">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -296,7 +296,7 @@
                                 </button>
                             </div>
 
-                            <div id="CDM" onclick="displayFiltredPlayers('CDM')" class="cardlid w-28 h-40 relative top-7">
+                            <div id="CDM" onclick="displayFiltredPlayers('CDM, event')" class="cardlid w-28 h-40 relative top-7">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -315,7 +315,7 @@
                                 </button>
                             </div>
 
-                            <div id="CM" onclick="displayFiltredPlayers('CM')" class="cardlid w-28 h-40 relative">
+                            <div id="CM" onclick="displayFiltredPlayers('CM', event)" class="cardlid w-28 h-40 relative">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -339,7 +339,7 @@
                     <div id="def-cards" class="w-[55.65rem] flex justify-center relative top-14">
                         <div class="flex gap-28">
     
-                            <div id="RB" onclick="displayFiltredPlayers('RB')" class="cardlid w-28 h-40 relative bottom-7">
+                            <div id="RB" onclick="displayFiltredPlayers('RB', event)" class="cardlid w-28 h-40 relative bottom-7">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -358,7 +358,7 @@
                                 </button>
                             </div>
     
-                            <div id="CB" onclick="displayFiltredPlayers('CB')" class="cardlid w-28 h-40 relative">
+                            <div id="CB" onclick="displayFiltredPlayers('CB', event)" class="cardlid w-28 h-40 relative">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -377,7 +377,7 @@
                                 </button>
                             </div>
     
-                            <div id="CB" onclick="displayFiltredPlayers('CB')" class="cardlid w-28 h-40 relative">
+                            <div id="CB" onclick="displayFiltredPlayers('CB', event)" class="cardlid w-28 h-40 relative">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -396,7 +396,7 @@
                                 </button>
                             </div>
     
-                            <div id="LB" onclick="displayFiltredPlayers('LB')" class="cardlid w-28 h-40 relative bottom-7">
+                            <div id="LB" onclick="displayFiltredPlayers('LB', event)" class="cardlid w-28 h-40 relative bottom-7">
                                 <button class="h-40">
                                     <img class="" src="../assets/img/placeholder-card-normal.webp">
                                     <div
@@ -417,7 +417,7 @@
                         </div>
                     </div>
     
-                    <div id="GK" onclick="displayFiltredPlayers('GK')" class="w-[55.65rem] flex justify-center relative top-10">
+                    <div id="GK" onclick="displayFiltredPlayers('GK', event)" class="w-[55.65rem] flex justify-center relative top-10">
                         <div class="flex gap-28">
     
                             <div id="GK" class="cardlid w-28 h-40 relative top-3">
@@ -902,6 +902,8 @@
             </div>
         </button>
     </div>
+
+    
     <script src="../public/JS/players.js"></script>
     <script src="../public/JS/script.js"></script>
 </body>

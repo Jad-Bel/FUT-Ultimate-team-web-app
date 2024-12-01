@@ -396,7 +396,9 @@ const dribbling = document.querySelector('#dribblingInput');
 const defending = document.querySelector('#defendingInput');
 const physical = document.querySelector('#physicalInput');
 const club = document.querySelector('#clubInput');
-const playersList = document.querySelector('#players-list')
+const playersList = document.querySelector('#players-list');
+
+let nextId = 27;
 
 searchCloseBtn.addEventListener('click', function () {
     formation.classList.remove('hidden');
@@ -422,6 +424,7 @@ closeAddBtn.addEventListener('click', function () {
 
 function addPlayer () {
     const player = {
+        id: nextId++,
         name: Name.value,
         position: position.value,
         club: club.value,
@@ -448,7 +451,6 @@ function addPlayer () {
     }
 
     players.push(player);
-    console.log(player)
     clearFormField();
 }
 
@@ -472,15 +474,19 @@ function clearFormField () {
     }
 }
 
-function displayFiltredPlayers (position) {
+let currTarget = null;
+
+function displayFiltredPlayers (position, event) {
     const filteredPLayers = players.filter(player => player.position === position);
     playersList.innerHTML = '';
+    currTarget = event.currentTarget;
 
     filteredPLayers.forEach(player => {
+        
         const newDiv = document.createElement('div');
         newDiv.classList = 'cardlid w-36 h-40 shadow-emerald-500 hover:drop-shadow-2xl transition-all duration-200 ease-in-out'
 
-        newDiv.innerHTML = ` <button class="relative bottom-5 left-4" aria-label="Card Button">
+        newDiv.innerHTML = `<button class="relative bottom-5 left-4" onclick="insertPlayer(${player.id})">
             <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
             <div class="flex">
                 <div
@@ -718,6 +724,131 @@ function displayAllPlsyers() {
     searchPlayers.classList.remove('hidden');
 }
 
-function insertPlayer () {
+function insertPlayer (id) {
+
+    const playerToInsert = players.find(player => player.id === id);
+   
+    if(!playerToInsert) {
+        console.log('player not found');
+        return;
+    }
+
+    console.log(currTarget);
     
+
+    currTarget.innerHTML = `
+    <div class="cardlid w-36 h-40 shadow-emerald-500 hover:drop-shadow-2xl transition-all duration-200 ease-in-out">
+        <button class="relative bottom-5 left-4" onclick="insertPlayer(${playerToInsert.id})">
+            <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
+            <div class="flex">
+                <div
+                    class="text-[#4d331f] gap-1 flex flex-col items-center justify-center text-2xl relative bottom-[11rem] left-4 h-40 w-28">
+                    <div class="flex ">
+                        <div class="text-sm relative left-1.5 flex flex-col">
+                            <span
+                                class="text-[#4d331f] relative top-2 font-bold text-lg">${playerToInsert.rating}</span>
+                            <span
+                                class="text-[#4d331f] relative bottom-0.5 text-[0.5rem]">${playerToInsert.position}</span>
+                            <div class="flex flex-col items-center gap-0.5 relative bottom-1.5">
+                                <div class=" w-3">
+                                    <img src="${playerToInsert.club}" alt="">
+                                </div>
+
+                                <div class=" w-3">
+                                    <img src="${playerToInsert.flag}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-18 relative right-2 bottom-[0.1rem]">
+                            <img src="${playerToInsert.photo}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="h-3 flex">
+                        <span class="text-xs font-bold relative bottom-1.5">${playerToInsert.name}</span>
+                    </div>
+
+                    <div class="flex gap-0.5 relative bottom-1.5">
+                        <div class="">
+
+                            <div class="h-3 flex items-center ">
+                                <span class="text-[0.6rem] font-thin">PAC</span>
+                            </div>
+
+                            <div class="h-2.5 flex items-center justify-center">
+                                <span class="text-[0.6rem] font-semibold">${playerToInsert.pace}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="">
+
+                            <div class="h-3 flex items-center">
+                                <span class="text-[0.6rem] font-thin">SHO</span>
+                            </div>
+
+                            <div class="h-2.5 flex items-center justify-center">
+                                <span class="text-[0.6rem] font-semibold">${playerToInsert.shooting}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="">
+
+                            <div class="h-3 flex items-center">
+                                <span class="text-[0.6rem] font-thin">PAS</span>
+                            </div>
+
+                            <div class="h-2.5 flex items-center justify-center">
+                                <span class="text-[0.6rem] font-semibold">${playerToInsert.passing}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="">
+
+                            <div class="h-3 flex items-center">
+                                <span class="text-[0.6rem] font-thin">DRI</span>
+                            </div>
+
+                            <div class="h-2.5 flex items-center justify-center">
+                                <span class="text-[0.6rem] font-semibold">${playerToInsert.dribbling}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="">
+
+                            <div class="h-3 flex items-center">
+                                <span class="text-[0.6rem] font-thin">DEF</span>
+                            </div>
+
+                            <div class="h-2.5 flex items-center justify-center">
+                                <span class="text-[0.6rem] font-semibold">${playerToInsert.defending}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="">
+
+                            <div class="h-3 flex items-center">
+                                <span class="text-[0.6rem] font-thin">PHY</span>
+                            </div>
+
+                            <div class="h-2.5 flex items-center justify-center">
+                                <span class="text-[0.6rem] font-semibold">${playerToInsert.physical}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </button>
+    </div>
+    `;
+
+    formation.classList.remove('hidden');
+    subtitues.classList.remove('hidden');
+    searchPlayers.classList.add('hidden');
 }
