@@ -620,7 +620,7 @@ function insertPlayer(id) {
     if (playerToInsert.position === "GK") {
         currTarget.innerHTML = `<div class="cardlid w-36 h-40 shadow-emerald-500 hover:drop-shadow-2xl transition-all duration-200 ease-in-out">
         <div class="w-[80%] flex justify-center z-50">
-            <button id="removePlayer" onclick="removePlayer(${playerToRemove.id})" class="w-[50%] text-black bg-emerald-500 rounded-lg font-semibold p-1 text-[5px] flex items-center justify-center hover:w-[50%] hover:bg-emerald-800 z-50">Remove player</button>
+            <button id="removePlayer" onclick="removePlayer(${playerToInsert.id})" class="w-[50%] text-black bg-emerald-500 rounded-lg font-semibold p-1 text-[5px] flex items-center justify-center hover:w-[50%] hover:bg-emerald-800 z-50">Remove player</button>
         </div>
         <button class="relative bottom-5 right-4" onclick="insertPlayer(${playerToInsert.id})">
                     <img class="" src="../assets/img/badge_gold.webp" class="w-28 h-40">
@@ -890,3 +890,102 @@ function removePlayer(id,event) {
     subtitues.classList.remove('hidden');
     searchPlayers.classList.add('hidden');
 };
+
+
+function formValidation() {
+    let isValid = true;
+
+    // Regex patterns
+    const namePattern = /^[A-Za-z\s]+$/; // Only letters and spaces
+    const positionPattern = /^(GK|DEF|MID|FWD)$/; // Valid football positions
+    const ratingPattern = /^([1-9][0-9]?|100)$/; // 1-100
+    const pacePattern = /^([1-9][0-9]?|100)$/; // 1-100
+    const shootingPattern = /^([1-9][0-9]?|100)$/; // 1-100
+    const passingPattern = /^([1-9][0-9]?|100)$/; // 1-100
+    const dribblingPattern = /^([1-9][0-9]?|100)$/; // 1-100
+    const defendingPattern = /^([1-9][0-9]?|100)$/; // 1-100
+    const physicalPattern = /^([1-9][0-9]?|100)$/; // 1-100
+    const clubPattern = /^[A-Za-z\s]+$/; // Only letters and spaces
+
+    // Validation
+    if (!namePattern.test(Name.value)) {
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!positionPattern.test(position.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    }else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!ratingPattern.test(rating.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!pacePattern.test(pace.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!shootingPattern.test(shooting.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!passingPattern.test(passing.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!dribblingPattern.test(dribbling.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!defendingPattern.test(defending.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!physicalPattern.test(physical.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    if (!clubPattern.test(club.value)) {
+        this.style.borderColor='red'
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+
+    return isValid;
+} 
