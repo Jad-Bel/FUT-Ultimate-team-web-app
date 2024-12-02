@@ -1,3 +1,14 @@
+const namePattern = /^[A-Za-z\s]+$/; 
+    const ratingPattern = /^([1-9][0-9]?|100)$/;
+    const pacePattern = /^([1-9][0-9]?|100)$/; 
+    const shootingPattern = /^([1-9][0-9]?|100)$/; 
+    const passingPattern = /^([1-9][0-9]?|100)$/;
+    const dribblingPattern = /^([1-9][0-9]?|100)$/;
+    const defendingPattern = /^([1-9][0-9]?|100)$/;
+    const physicalPattern = /^([1-9][0-9]?|100)$/;
+    const clubPattern = /^[A-Za-z\s]+$/; 
+
+
 const formation = document.querySelector('#formation-container');
 const subtitues = document.querySelector('#subtitues-container');
 const formModal = document.querySelector('.modalContainer');
@@ -20,7 +31,7 @@ const physical = document.querySelector('#physicalInput');
 const club = document.querySelector('#clubInput');
 const playersList = document.querySelector('#players-list');
 const removePlayerBtn = document.querySelector('#removePlayer');
-
+const nameMessage = document.getElementById("nameMessage");
 let nextId = 27;
 
 searchCloseBtn.addEventListener('click', function () {
@@ -30,6 +41,13 @@ searchCloseBtn.addEventListener('click', function () {
     console.log(2)
 })
 
+Name.addEventListener("input" , e=>{
+    if(namePattern.test(Name.value)){
+        nameMessage.innerText = "The name is valid";
+    }else{
+        nameMessage.innerText = "The name is not valid";
+    }
+})
 
 addPlayenBtn.addEventListener('click', function () {
     formation.classList.add('hidden');
@@ -104,7 +122,11 @@ function addPlayer() {
 }
 
 submitPlayerBtn.addEventListener('click', function () {
-    addPlayer();
+    if(nameRigex()) {
+        addPlayer(); 
+    } else {
+        formModal.innerHTML = ''
+    }
     console.log(players)
     formation.classList.remove('hidden');
     subtitues.classList.remove('hidden');
@@ -892,22 +914,21 @@ function removePlayer(id,event) {
 };
 
 
+function nameRigex() {
+    const namePattern = /^[A-Za-z\s]+$/;
+    if (!namePattern.test(Name.value)) {
+        isValid = false;
+    } else {
+        this.style.border ='3px solid #7eff7e'
+        isValid: true;
+    }
+}
+
 function formValidation() {
     let isValid = true;
+console.log(1)
+    
 
-    // Regex patterns
-    const namePattern = /^[A-Za-z\s]+$/; // Only letters and spaces
-    const positionPattern = /^(GK|DEF|MID|FWD)$/; // Valid football positions
-    const ratingPattern = /^([1-9][0-9]?|100)$/; // 1-100
-    const pacePattern = /^([1-9][0-9]?|100)$/; // 1-100
-    const shootingPattern = /^([1-9][0-9]?|100)$/; // 1-100
-    const passingPattern = /^([1-9][0-9]?|100)$/; // 1-100
-    const dribblingPattern = /^([1-9][0-9]?|100)$/; // 1-100
-    const defendingPattern = /^([1-9][0-9]?|100)$/; // 1-100
-    const physicalPattern = /^([1-9][0-9]?|100)$/; // 1-100
-    const clubPattern = /^[A-Za-z\s]+$/; // Only letters and spaces
-
-    // Validation
     if (!namePattern.test(Name.value)) {
         isValid = false;
     } else {
