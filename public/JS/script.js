@@ -39,13 +39,8 @@ const clubMessage = document.getElementById('clubMessage');
 const ratingMessage = document.getElementById('ratingMessage')
 let nextId = 27;
 
-searchCloseBtn.addEventListener('click', function () {
-    formation.classList.remove('hidden');
-    subtitues.classList.remove('hidden');
-    searchPlayers.classList.add('hidden');
-    console.log(2)
-})
 
+// rigex for each input field
 Name.addEventListener("input" , event =>{
     if(namePattern.test(Name.value)){
         nameMessage.innerText = "input field valid";
@@ -77,7 +72,14 @@ rating.addEventListener('input', e => {
         ratingMessage.innerText = "input field not valid";
     }
 })
+// end of rigex
 
+searchCloseBtn.addEventListener('click', function () {
+    formation.classList.remove('hidden');
+    subtitues.classList.remove('hidden');
+    searchPlayers.classList.add('hidden');
+    console.log(2)
+})
 
 addPlayenBtn.addEventListener('click', function () {
     formation.classList.add('hidden');
@@ -173,7 +175,6 @@ function clearFormField() {
         physical: physical.value
     }
 }
-
 let currTarget = null;
 let insertedPlayers = [];
 
@@ -904,6 +905,7 @@ function insertPlayer(id) {
     
 }
 
+
 function removePlayer(id,event) {
     const playerToRemove = players.find(player => player.id === id);
     
@@ -940,99 +942,3 @@ function removePlayer(id,event) {
 };
 
 
-function nameRigex() {
-    const namePattern = /^[A-Za-z\s]+$/;
-    if (!namePattern.test(Name.value)) {
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-}
-
-function formValidation() {
-    let isValid = true;
-console.log(1)
-    
-
-    if (!namePattern.test(Name.value)) {
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!positionPattern.test(position.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    }else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!ratingPattern.test(rating.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!pacePattern.test(pace.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!shootingPattern.test(shooting.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!passingPattern.test(passing.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!dribblingPattern.test(dribbling.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!defendingPattern.test(defending.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!physicalPattern.test(physical.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    if (!clubPattern.test(club.value)) {
-        this.style.borderColor='red'
-        isValid = false;
-    } else {
-        this.style.border ='3px solid #7eff7e'
-        isValid: true;
-    }
-
-    return isValid;
-} 
