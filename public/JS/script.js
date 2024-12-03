@@ -1,12 +1,13 @@
 const namePattern = /^[A-Za-z\s]+$/; 
-    const ratingPattern = /^([1-9][0-9]?|100)$/;
-    const pacePattern = /^([1-9][0-9]?|100)$/; 
-    const shootingPattern = /^([1-9][0-9]?|100)$/; 
-    const passingPattern = /^([1-9][0-9]?|100)$/;
-    const dribblingPattern = /^([1-9][0-9]?|100)$/;
-    const defendingPattern = /^([1-9][0-9]?|100)$/;
-    const physicalPattern = /^([1-9][0-9]?|100)$/;
-    const clubPattern = /^[A-Za-z\s]+$/; 
+const natioPattern = /^[A-Za-z\s]+$/; 
+const ratingPattern = /^([1-9][0-9]?|100)$/;
+const pacePattern = /^([1-9][0-9]?|100)$/; 
+const shootingPattern = /^([1-9][0-9]?|100)$/; 
+const passingPattern = /^([1-9][0-9]?|100)$/;
+const dribblingPattern = /^([1-9][0-9]?|100)$/;
+const defendingPattern = /^([1-9][0-9]?|100)$/;
+const physicalPattern = /^([1-9][0-9]?|100)$/;
+const clubPattern = /^[A-Za-z\s]+$/; 
 
 
 const formation = document.querySelector('#formation-container');
@@ -31,7 +32,11 @@ const physical = document.querySelector('#physicalInput');
 const club = document.querySelector('#clubInput');
 const playersList = document.querySelector('#players-list');
 const removePlayerBtn = document.querySelector('#removePlayer');
+const nationality = document.getElementById('natioInput')
 const nameMessage = document.getElementById("nameMessage");
+const natioMessage = document.getElementById('natioMessage');
+const clubMessage = document.getElementById('clubMessage');
+const ratingMessage = document.getElementById('ratingMessage')
 let nextId = 27;
 
 searchCloseBtn.addEventListener('click', function () {
@@ -41,13 +46,38 @@ searchCloseBtn.addEventListener('click', function () {
     console.log(2)
 })
 
-Name.addEventListener("input" , e=>{
+Name.addEventListener("input" , event =>{
     if(namePattern.test(Name.value)){
-        nameMessage.innerText = "The name is valid";
+        nameMessage.innerText = "input field valid";
     }else{
-        nameMessage.innerText = "The name is not valid";
+        nameMessage.innerText = "input field not valid";
     }
 })
+
+nationality.addEventListener('input', e => {
+    if(natioPattern.test(nationality.value)){
+        natioMessage.innerText = "input field valid";
+    }else{
+        natioMessage.innerText = "input field not valid";
+    }
+})
+
+club.addEventListener('input', e => {
+    if(clubPattern.test(club.value)){
+        clubMessage.innerText = "input field valid";
+    }else{
+        clubMessage.innerText = "input field not valid";
+    }
+})
+
+rating.addEventListener('input', e => {
+    if(ratingPattern.test(rating.value)){
+        ratingMessage.innerText = "input field valid";
+    }else{
+        ratingMessage.innerText = "input field not valid";
+    }
+})
+
 
 addPlayenBtn.addEventListener('click', function () {
     formation.classList.add('hidden');
@@ -122,11 +152,7 @@ function addPlayer() {
 }
 
 submitPlayerBtn.addEventListener('click', function () {
-    if(nameRigex()) {
-        addPlayer(); 
-    } else {
-        formModal.innerHTML = ''
-    }
+    addPlayer(); 
     console.log(players)
     formation.classList.remove('hidden');
     subtitues.classList.remove('hidden');
